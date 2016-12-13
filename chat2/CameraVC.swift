@@ -9,8 +9,8 @@
 import UIKit
 import Firebase
 
-class CameraVC: CameraViewController {
-
+class CameraVC: CameraViewController, CameraVCDelegate {
+//extension CameraViewController {
     
     @IBOutlet weak var preView: PreviewView!
     @IBOutlet weak var livePhotoModeButton: UIButton!
@@ -76,6 +76,41 @@ class CameraVC: CameraViewController {
     }
     @IBAction func toggleLivePhotoModeTapped(_ sender: UIButton) {
         self.toggleLivePhotoModeTapped(sender)
+    }
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        try! FIRAuth.auth()?.signOut()
+        performSegue(withIdentifier: "LoginVC", sender: nil)
+    }
+    
+    func videoRecordingComplete(videoURL: URL?) {
+        
+        performSegue(withIdentifier: "UsersVC", sender: ["videoURL": videoURL])
+        
+    }
+    
+    func videoRecordingFailed() {
+        
+    }
+    
+    func snapshotTaken(imageData: Data?) {
+        performSegue(withIdentifier: "UsersVC", sender: ["imageData": imageData])
+    }
+    
+    func snapshotFailed() {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let usersVC = segue.destination as? UserVC {
+            if let videoDict = sender as?[String: URL] {
+                let url = videoDict["videoURL"]
+                usersVC.videoURL = url
+            } else if let imageDict = sender as? [String: Data] {
+                let imageData = imageDict["imageData"]
+                usersVC.imageData = imageData
+                
+            }
+        }
     }
     
 }

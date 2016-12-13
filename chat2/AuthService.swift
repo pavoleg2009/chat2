@@ -26,20 +26,25 @@ class AuthService {
         
         //FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+            
             if error != nil {
                 if let errorCode = FIRAuthErrorCode(rawValue: (error as! NSError).code) {
                     if errorCode == FIRAuthErrorCode.errorCodeUserNotFound {
+            
                         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                             if error != nil {
                                 self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
                             } else {
                                 if user?.uid != nil {
-                                    FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+                                                                    
+                                    DataService.instance.createEmptyDBUser(uid: (user?.uid)!)
+                                    
+                                    FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                                         if error != nil {
                                             self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
                                             
                                         } else {
-                                            // successfully logged in
+                                            
                                             onComplete?(nil, user)
                                         }
                                     })
@@ -53,6 +58,7 @@ class AuthService {
                 }
             } else {
                 // successfully loged In
+//                DataService.instance.createEmptyDBUser(uid: (user?.uid)!)
                 onComplete?(nil, user)
             }
         })

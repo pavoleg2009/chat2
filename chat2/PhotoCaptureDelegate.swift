@@ -116,4 +116,8 @@ class PhotoCaptureDelegate: NSObject, AVCapturePhotoCaptureDelegate {
 			}
 		}
 	}
+    
+    func videoRecordingComplete(url: URL?){
+        print("=== Recording URL\(url)")
+    }
 }

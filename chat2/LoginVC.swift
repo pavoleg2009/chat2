@@ -24,7 +24,7 @@ class LoginVC: UIViewController {
     }
     
     deinit {
-        AuthService.instance.logout()
+//        AuthService.instance.logout()
     }
 
     @IBAction func loginPressed(_ sender: Any) {

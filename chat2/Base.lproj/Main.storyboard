@@ -6,9 +6,102 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--LoginVC-->
+        <scene sceneID="24O-dA-Lx8">
+            <objects>
+                <viewController id="J5j-LN-Ee3" customClass="LoginVC" customModule="chat2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0C9-sL-goZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="URI-4E-Dx4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qfB-gA-NjW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kxN-cS-xVr">
+                                <rect key="frame" x="40" y="180" width="240" height="160"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="peB-bE-T1P" customClass="RoundTextField" customModule="chat2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="46.5"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="0.80136986301369861" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OyH-EX-4P2" customClass="RoundTextField" customModule="chat2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56.5" width="240" height="47"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="0.80136986300000002" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jK-ik-CIK" customClass="RoundedButton" customModule="chat2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="113.5" width="240" height="46.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginPressed:" destination="J5j-LN-Ee3" eventType="touchUpInside" id="tt9-18-LeD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="pIp-pt-qLG"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kxN-cS-xVr" firstAttribute="leading" secondItem="qfB-gA-NjW" secondAttribute="leadingMargin" constant="24" id="D6b-2a-g33"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kxN-cS-xVr" secondAttribute="trailing" constant="24" id="OYl-O1-Jkd"/>
+                            <constraint firstItem="kxN-cS-xVr" firstAttribute="top" secondItem="0C9-sL-goZ" secondAttribute="bottom" constant="160" id="uBh-3X-Uh2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="peB-bE-T1P" id="nBa-eA-yu4"/>
+                        <outlet property="passwordField" destination="OyH-EX-4P2" id="eI1-TS-L9a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZO-ur-upQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-845.625" y="50.70422535211268"/>
+        </scene>
         <!--CameraVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -158,6 +251,7 @@
                         <outlet property="preView" destination="DGt-fV-xse" id="0I3-Ww-uCB"/>
                         <outlet property="recordButton" destination="b9O-dv-Z3W" id="mLe-Aq-N2K"/>
                         <outlet property="resumeButton" destination="xtF-As-1z5" id="aqI-mz-qSe"/>
+                        <segue destination="J5j-LN-Ee3" kind="presentation" identifier="LoginVC" id="41n-Uw-eEj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -167,7 +261,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="31.875" y="52.816901408450704"/>
+            <point key="canvasLocation" x="-1684" y="51"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CameraVC: CameraViewController {
 
@@ -42,6 +43,13 @@ class CameraVC: CameraViewController {
     
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        guard FIRAuth.auth()?.currentUser != nil  else {
+            //load login VC
+            performSegue(withIdentifier: "LoginVC", sender: nil)
+            return
+        }
+    }
     
     @IBAction func toggleCaptureModeTapped(_ sender: UISegmentedControl) {
         self.toggleCaptureMode(sender)

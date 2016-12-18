@@ -41,4 +41,16 @@ class DataService {
         let profile = ["firstName": "", "lastName": ""]
         userRef.child(uid).child("profile").setValue(profile)
     }
+    
+    func sendMediaPullRequest(senderUID: String, sendingTo:[String: User], mediaUrl: URL, textSnippet: String?) {
+// FIXME: Check pr.sendingTo
+        var uids = [String]()
+        for uid in sendingTo.keys {
+            uids.append(uid)
+        }
+        let pr: [String: Any] = ["mediaURL": mediaUrl.absoluteString, "userID": senderUID, "openCount": 0, "sendingTo": uids]
+        print(pr)
+        mainRef.child("pullRequests").childByAutoId().setValue(pr)
+        
+    }
 }

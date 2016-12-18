@@ -11,6 +11,6 @@ import UIKit
 protocol CameraVCDelegate {
     func videoRecordingComplete(videoURL: URL?)
     func videoRecordingFailed()
-    func snapshotTaken(imageData: Data?)
+    func photoCaptureComplete(imageData: Data?)
     func snapshotFailed()
 }

@@ -115,10 +115,13 @@ class UserVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     print("===[UserVC].sendPRButtonTapped() Error uploading video : \(error.debugDescription)")
                 } else {
                     let downloadURL = meta!.downloadURL()
-                    // save this somethere
-                    self.dismiss(animated: true, completion: nil)
+ // TODO: replace textSnippet
+                    DataService.instance.sendMediaPullRequest(senderUID: (FIRAuth.auth()?.currentUser?.uid)!, sendingTo: self.selectedUsers, mediaUrl: downloadURL!, textSnippet: "replace this  text")
+
                 }
             })
+            self.dismiss(animated: true, completion: nil)
+            
         } else if let image = _imageData {
             let ref = DataService.instance.imagesStorageRef.child("\(UUID().uuidString)")
             
@@ -127,10 +130,13 @@ class UserVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     print("===[UserVC].sendPRButtonTapped() Error uploading image : \(error.debugDescription)")
                 } else {
                     let downloadURL = meta!.downloadURL()
-                    // save this somethere
-                    self.dismiss(animated: true, completion: nil)
+// TODO:  save this somethere
+                    
                 }
             })
+            
+            self.dismiss(animated: true, completion: nil)
+            
         }
     }
     

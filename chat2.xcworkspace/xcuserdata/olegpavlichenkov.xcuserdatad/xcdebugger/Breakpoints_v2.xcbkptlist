@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "chat2/CameraViewController.swift"
-            timestampString = "503337507.371762"
+            filePath = "chat2/PhotoCaptureDelegate.swift"
+            timestampString = "503405861.57006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "723"
-            endingLineNumber = "723"
-            landmarkName = "capture(_:didFinishRecordingToOutputFileAt:fromConnections:error:)"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "capture(_:didFinishCaptureForResolvedSettings:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +25,78 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "chat2/CameraViewController.swift"
-            timestampString = "503337507.371762"
+            filePath = "chat2/CameraVCExtension.swift"
+            timestampString = "503402763.008476"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "748"
-            endingLineNumber = "748"
-            landmarkName = "capture(_:didFinishRecordingToOutputFileAt:fromConnections:error:)"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "photoCaptureComplete(imageData:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "chat2/CameraViewController.swift"
+            timestampString = "503402828.677703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "584"
+            endingLineNumber = "584"
+            landmarkName = "capturePhoto(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "chat2/CameraViewController.swift"
+            timestampString = "503404310.238768"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "572"
+            endingLineNumber = "572"
+            landmarkName = "capturePhoto(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "chat2.CameraViewController.(capturePhoto (__ObjC.UIButton) -&gt; ()).(closure #1).(closure #3)"
+                  moduleName = "chat2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olegpavlichenkov/Dropbox/__Learning/Udemy/iOS_Development/chat2/chat2/CameraViewController.swift"
+                  timestampString = "503404310.466554"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "572"
+                  endingLineNumber = "572"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "chat2.CameraViewController.(capturePhoto (__ObjC.UIButton) -&gt; ()).(closure #1).(closure #3).(closure #1)"
+                  moduleName = "chat2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olegpavlichenkov/Dropbox/__Learning/Udemy/iOS_Development/chat2/chat2/CameraViewController.swift"
+                  timestampString = "503404310.471367"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "572"
+                  endingLineNumber = "572"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

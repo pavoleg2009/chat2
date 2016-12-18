@@ -21,12 +21,15 @@ class PhotoCaptureDelegate: NSObject, AVCapturePhotoCaptureDelegate {
 	private var photoData: Data? = nil
 	
 	private var livePhotoCompanionMovieURL: URL? = nil
+    
+    private var onPictureSave: (_ photoData: Data?) -> ()
 
-	init(with requestedPhotoSettings: AVCapturePhotoSettings, willCapturePhotoAnimation: @escaping () -> (), capturingLivePhoto: @escaping (Bool) -> (), completed: @escaping (PhotoCaptureDelegate) -> ()) {
+	init(with requestedPhotoSettings: AVCapturePhotoSettings, willCapturePhotoAnimation: @escaping () -> (), capturingLivePhoto: @escaping (Bool) -> (), completed: @escaping (PhotoCaptureDelegate) -> (), onPictureSave: @escaping (_ photoData: Data?) -> ()) {
 		self.requestedPhotoSettings = requestedPhotoSettings
 		self.willCapturePhotoAnimation = willCapturePhotoAnimation
 		self.capturingLivePhoto = capturingLivePhoto
 		self.completed = completed
+        self.onPictureSave = onPictureSave
 	}
 	
 	private func didFinish() {
@@ -95,6 +98,9 @@ class PhotoCaptureDelegate: NSObject, AVCapturePhotoCaptureDelegate {
 				PHPhotoLibrary.shared().performChanges({ [unowned self] in
 						let creationRequest = PHAssetCreationRequest.forAsset()
 						creationRequest.addResource(with: .photo, data: photoData, options: nil)
+                    
+// TODO: Save image to storage here
+                        self.onPictureSave(photoData)
 					
 						if let livePhotoCompanionMovieURL = self.livePhotoCompanionMovieURL {
 							let livePhotoCompanionMovieFileResourceOptions = PHAssetResourceCreationOptions()
@@ -117,7 +123,7 @@ class PhotoCaptureDelegate: NSObject, AVCapturePhotoCaptureDelegate {
 		}
 	}
     
-    func videoRecordingComplete(url: URL?){
-        print("=== Recording URL\(url)")
-    }
+//    func videoRecordingComplete(url: URL?){
+//        print("=== Recording URL\(url)")
+//    }
 }

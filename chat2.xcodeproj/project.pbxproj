@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2806DE321DF8CEDB00DE6C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806DE311DF8CEDB00DE6C54 /* AppDelegate.swift */; };
-		2806DE341DF8CEDB00DE6C54 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806DE331DF8CEDB00DE6C54 /* CameraVC.swift */; };
+		2806DE341DF8CEDB00DE6C54 /* CameraVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806DE331DF8CEDB00DE6C54 /* CameraVCExtension.swift */; };
 		2806DE371DF8CEDB00DE6C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2806DE351DF8CEDB00DE6C54 /* Main.storyboard */; };
 		2806DE391DF8CEDB00DE6C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2806DE381DF8CEDB00DE6C54 /* Assets.xcassets */; };
 		2806DE3C1DF8CEDB00DE6C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2806DE3A1DF8CEDB00DE6C54 /* LaunchScreen.storyboard */; };
@@ -32,7 +32,7 @@
 		0E65AB0515F1EF522FC8CA30 /* Pods_chat2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chat2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2806DE2E1DF8CEDB00DE6C54 /* chat2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chat2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2806DE311DF8CEDB00DE6C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2806DE331DF8CEDB00DE6C54 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		2806DE331DF8CEDB00DE6C54 /* CameraVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVCExtension.swift; sourceTree = "<group>"; };
 		2806DE361DF8CEDB00DE6C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2806DE381DF8CEDB00DE6C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2806DE3B1DF8CEDB00DE6C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				2806DE441DF8D8E400DE6C54 /* CameraViewController.swift */,
-				2806DE331DF8CEDB00DE6C54 /* CameraVC.swift */,
+				2806DE331DF8CEDB00DE6C54 /* CameraVCExtension.swift */,
 				2806DE431DF8D8E400DE6C54 /* PreviewView.swift */,
 				2806DE531DFEB73400DE6C54 /* LoginVC.swift */,
 				289E0ABD1DFFEA3B00DC22EC /* UserVC.swift */,
@@ -293,7 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				289E0AC21E00041400DC22EC /* User.swift in Sources */,
-				2806DE341DF8CEDB00DE6C54 /* CameraVC.swift in Sources */,
+				2806DE341DF8CEDB00DE6C54 /* CameraVCExtension.swift in Sources */,
 				2806DE471DF8D8E400DE6C54 /* CameraViewController.swift in Sources */,
 				289E0ABE1DFFEA3B00DC22EC /* UserVC.swift in Sources */,
 				28F8DE461E00455300602E89 /* CameraVCDelegate.swift in Sources */,
@@ -349,6 +349,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -398,6 +399,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

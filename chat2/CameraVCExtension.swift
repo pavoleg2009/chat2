@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CameraVCExtension.swift
 //  chat2
 //
 //  Created by Oleg Pavlichenkov on 08/12/2016.
@@ -9,39 +9,41 @@
 import UIKit
 import Firebase
 
-class CameraVC: CameraViewController, CameraVCDelegate {
-//extension CameraViewController {
+//class CameraVC: CameraViewController, CameraVCDelegate {
+extension CameraViewController {
     
-    @IBOutlet weak var preView: PreviewView!
-    @IBOutlet weak var livePhotoModeButton: UIButton!
-    
-    @IBOutlet weak var resumeButton: UIButton!
-    @IBOutlet weak var capturingLivePhotoLabel: UILabel!
-    
-    @IBOutlet weak var cameraUnavailableLabel: UILabel!
-    
-    @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet weak var photoButton: UIButton!
-    @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var captureModeControl: UISegmentedControl!
-    
-    override func viewDidLoad() {
-        
-        self._previewView = preView
-        self._livePhotoModeButton = livePhotoModeButton
-        self._resumeButton = resumeButton
-        self._cameraUnavailableLabel = cameraUnavailableLabel
-        self._capturingLivePhotoLabel = capturingLivePhotoLabel
-        self._recordButton = recordButton
-        self._photoButton = photoButton
-        self._cameraButton = cameraButton
-        self._captureModeControl = captureModeControl
-        
-        super.viewDidLoad()
-        
-        
-    
-    }
+//    @IBOutlet weak var preView: PreviewView!
+//    @IBOutlet weak var livePhotoModeButton: UIButton!
+//    
+//    @IBOutlet weak var resumeButton: UIButton!
+//    @IBOutlet weak var capturingLivePhotoLabel: UILabel!
+//    
+//    @IBOutlet weak var cameraUnavailableLabel: UILabel!
+//    
+//    @IBOutlet weak var recordButton: UIButton!
+//    @IBOutlet weak var photoButton: UIButton!
+//    @IBOutlet weak var cameraButton: UIButton!
+//    @IBOutlet weak var captureModeControl: UISegmentedControl!
+
+
+//    
+//    override func viewDidLoad() {
+//        
+//        self._previewView = preView
+//        self._livePhotoModeButton = livePhotoModeButton
+//        self._resumeButton = resumeButton
+//        self._cameraUnavailableLabel = cameraUnavailableLabel
+//        self._capturingLivePhotoLabel = capturingLivePhotoLabel
+//        self._recordButton = recordButton
+//        self._photoButton = photoButton
+//        self._cameraButton = cameraButton
+//        self._captureModeControl = captureModeControl
+//        
+//        super.viewDidLoad()
+//        
+//        
+//    
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
         guard FIRAuth.auth()?.currentUser != nil  else {
@@ -83,7 +85,6 @@ class CameraVC: CameraViewController, CameraVCDelegate {
     }
     
     func videoRecordingComplete(videoURL: URL?) {
-        
         performSegue(withIdentifier: "UsersVC", sender: ["videoURL": videoURL])
         
     }
@@ -92,7 +93,8 @@ class CameraVC: CameraViewController, CameraVCDelegate {
         
     }
     
-    func snapshotTaken(imageData: Data?) {
+    func photoCaptureComplete(imageData: Data?) {
+        print("photoCaptureComplete !!!")
         performSegue(withIdentifier: "UsersVC", sender: ["imageData": imageData])
     }
     
